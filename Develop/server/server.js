@@ -6,7 +6,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const path = require('path');
 
-const routes = require('./routes');
+// const routes = require('./routes');
 const { authMiddleware } = require('./utils/auth');
 
 const PORT = process.env.PORT || 3001;
@@ -19,7 +19,7 @@ const server = new ApolloServer({
 });
 
 // integrates the Apollo server w/ the Express app as middleware
-server.applyMiddleware({app});
+server.applyMiddleware({ app });
 
 // check to see if it should be true or false
 app.use(express.urlencoded({ extended: true }));
