@@ -1,4 +1,4 @@
-const { AuthenticationError } = require('apollo-server-errors');
+const { AuthenticationError } = require('apollo-server-express');
 const { Book, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -65,7 +65,7 @@ const resolvers = {
           { new: true }
         )
 
-        return { updatedUser };
+        return updatedUser;
       }
 
       throw new AuthenticationError('You must be logged in to do that!');
