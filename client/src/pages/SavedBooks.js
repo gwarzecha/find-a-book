@@ -48,7 +48,7 @@ const SavedBooks = () => {
     }
   };
 
-  
+
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
@@ -63,7 +63,8 @@ const SavedBooks = () => {
             : 'You have no saved books!'}
         </h2>
         <CardColumns>
-          {userData.savedBooks.map((book) => {
+          {loading && "Loading your books!"}
+          {!loading && userData && userData.savedBooks && userData.savedBooks.map((book) => {
             return (
               <Card key={book.bookId} border='dark'>
                 {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
