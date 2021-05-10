@@ -4,7 +4,7 @@
   
   ## Description: 
 
-  Find A Book is an book search app that utilizes Google's book API to retrieve book data. The app was built using `React.js`, `Apollo` for server for server instatiation and `GraphQL` utilization, `MongoDB`, `Mongoose`, and starter code which provided the basic front-end UI. `React Router` is utilized to make the app a true single-page-application. 
+  Find A Book is an book search app that utilizes Google's book API to retrieve book data. The app was built using `MERN` stack, `Apollo` for server for server instatiation and `GraphQL` utilization, and starter code which provided the basic front-end UI. `React Router` is utilized to make the app a true single-page-application. 
   
   ![gif](./assets/books.gif)
 
