@@ -41,7 +41,7 @@ const SignupForm = () => {
     } catch (e) {
       console.error(e);
     }
-
+    // clears user data after submission
     setUserFormData({
       username: '',
       email: '',

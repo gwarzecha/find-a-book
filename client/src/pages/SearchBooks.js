@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 //import useMutation Hook to execute SAVE_BOOK
-import  { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 import { SAVE_BOOK } from '../utils/mutations';
 
 import Auth from '../utils/auth';
@@ -18,7 +18,7 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
   const loggedIn = Auth.loggedIn();
-  
+
   useEffect(() => {
     return () => saveBookIds(savedBookIds);
   });
@@ -72,7 +72,7 @@ const SearchBooks = () => {
       await saveBook({
         variables: { ...bookToSave }
       })
-      
+
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (e) {
@@ -84,7 +84,7 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Search for Books!</h1>
+          <h1>Find Some Books!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -99,7 +99,7 @@ const SearchBooks = () => {
               </Col>
               <Col xs={12} md={4}>
                 <Button type='submit' variant='success' size='lg'>
-                  Submit Search
+                  Find
                 </Button>
               </Col>
             </Form.Row>
@@ -111,7 +111,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+            : 'Type in the name of a book to begin'}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {
